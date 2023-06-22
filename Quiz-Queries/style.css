@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&family=Macondo&family=Poppins:wght@200;300;400;500;600;700;800&family=Sacramento&family=Tsukimi+Rounded:wght@300;400;500;600;700&family=Varela+Round&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --black: #000000;
+    --lightBlack: #333333;
+    --white: #ffffff;
+    --primaryColor: #00ccff;
+    --primaryColorDark: #0085b6;
+    --secondaryColor: #5cdeff;
+    --textColorDark: #111111;
+    --textColorMediumDark: #555555;
+    --textColorMediumLight: #dddddd;
+    --textColorLight: #ffffff;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: "Poppins", sans-serif !important;
+}
+
+.mainContainer{
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right, rgb(0, 46, 107) 40%, var(--primaryColorDark) 100%);
+    position: relative;
+}
+
+/* For Quiz Query Area */
+.mainContainer .quizQueryArea{
+    width: 55%;
+    background: rgba( 255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 8px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    overflow: hidden;
+    /* display: none; */
+}
+
+/* For Header Area */
+.quizQueryArea .headerArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px !important;
+    /* background-color: lightgreen; */
+    font-family: 'Varela Round', sans-serif;
+    box-shadow: 0 1px 10px 0 #777777;
+}
+.headerArea .timebar{
+    position: absolute;
+    /* width: 0%; */
+    bottom: 0px;
+    z-index: -1;
+    height: 5%;
+    background-color: var(--primaryColorDark);
+    transform: translateX(-20px);
+    border-radius: 10px;
+}
+.animateTimebar{
+    animation: timeBar 19s linear 0s infinite;
+}
+@keyframes timeBar {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+   
+.headerArea h3{
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 2.8rem;
+    /* background-color: #00ccff; */
+}
+.headerArea .timing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    gap: 10px;
+    padding: 6px 10px;
+    background-color: var(--primaryColorDark);
+    border-radius: 5px;
+}
+.timing p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--textColorLight);
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+}
+.timing span{
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    padding: 3px 0px;
+    background-color: var(--lightBlack);
+    color: var(--textColorLight);
+    border-radius: 5px;
+}
+
+/* For Middle Area */
+.quizQueryArea .contentArea{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 20px 0px 20px !important;
+    font-family: "Varela Round", sans-serif;
+}
+.contentArea .query{
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+.contentArea .optionList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.optionList .options{
+    background-color: transparent;
+    font-size: 1.7rem;
+    font-family: "Poppins", sans-serif;
+}
+.options input{
+    display: none;
+}
+.options input:checked + label{
+    background-color: rgba(0, 133, 182, 0.8);
+    color: var(--textColorLight);
+    box-shadow: 0px 0px 6px rgba(0, 133, 182, 0.8);
+}
+.options label{
+    width: 100%;
+    padding: 8px 10px;
+    color: var(--textColorLight);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    border: 2px solid var(--textColorMediumDark);
+    cursor: pointer;
+}
+
+.contentArea .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px 10px !important;
+    border-top: 1px solid rgba( 255, 255, 255, 0.4);
+    font-family: "Varela Round", sans-serif;
+    /* background-color: #00ccff; */
+}
+.footer p{
+    font-size: 1.8rem;
+    color: var(--textColorDark);
+    font-weight: bold;
+}
+.footer .totalQue{
+    color: var(--lightBlack);
+}
+.footer p span{
+    color: var(--primaryColorDark);
+}
+.footer button{
+    padding: 5px 20px;
+    font-size: 1.6rem;
+    background-color: transparent;
+    border: 2px solid var(--primaryColorDark);
+    color: var(--textColorDark);
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transform: scale(0);
+    transition: all 0.2s linear;
+}
+.footer button:hover{
+    color: var(--textColorLight);
+    background-color: var(--primaryColorDark);
+    border: 2px solid var(--primaryColorDark);
+}
+.footer button:active{
+    transform: scale(0.9);
+}
+
+
+
+/* For Quiz Result Area */
+.mainContainer .quizResultArea{
+    width: 45%;
+    background: rgba( 255, 255, 255, 0.7);
+    box-shadow: 0 8px 32px 0 rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 8px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    overflow: hidden;
+}
+
+.quizResultArea .resultHD{
+    padding: 10px 20px !important;
+    /* background-color: lightgreen; */
+    font-family: 'Varela Round', sans-serif;
+    box-shadow: 0 1px 10px 0 #777777;
+    text-align: center;
+}
+.resultHD h2{
+    font-size: 3.4rem;
+    font-weight: bold;
+    /* background-color: #00ccff; */
+}
+
+.quizResultArea .resultContent{
+    padding: 20px;
+}
+.wrgAns, .skpQue, .status{
+    border-top: 2px solid var(--textColorMediumDark);
+}
+.crtAns .property, .wrgAns .property, .skpQue .property, .status .property{
+    padding: 8px 0px 8px 30px;
+    /* background-color: lightgreen; */
+    font-size: 1.8rem;
+    color: var(--lightBlack);
+    font-weight: 500;
+    border-right: 2px solid var(--textColorMediumDark);
+}
+.crtAns .value, .wrgAns .value, .skpQue .value, .status .value{
+    padding: 8px 0px;
+    text-align: center;
+    /* background-color: lightgreen; */
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--primaryColorDark);
+}
+
+.quizResultArea .suggestionBtns{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: #00ccff; */
+    box-shadow: 0 1px 10px 0 #777777;
+}
+.suggestionBtns button{
+    padding: 5px 10px;
+    font-size: 1.6rem;
+    background-color: transparent;
+    border: 2px solid var(--primaryColorDark);
+    color: var(--textColorDark);
+    outline: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transform: scale(1);
+    transition: all 0.2s linear;
+}
+.suggestionBtns button:hover{
+    color: var(--textColorLight);
+    background-color: var(--primaryColorDark);
+    border: 2px solid var(--primaryColorDark);
+}
+.suggestionBtns button:active{
+    transform: scale(0.9);
+}
+
+.hide{
+    display: none !important;
+}

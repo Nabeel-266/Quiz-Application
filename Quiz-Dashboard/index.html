@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Font-Awesome-Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- BoxIcons  -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <div class="mainContainer container-fluid g-0">
+        <div class="blurOverlay">
+            <div class="subContainer">
+                <section class="mainHeading col-12 m-0">
+                    <h1 class="m-0">CoDinG Quiz</h1>
+                    <p class="m-0">Test your skills with Coding Quizzes</p>
+                </section>
+
+                <section class="quizSelection col-12 m-0">
+                    <div class="quizzesRow row g-0">
+                        <div class="quizHD col-12">
+                            <h2 class="m-0">Quizzes</h2>
+                        </div>
+
+                        <div class="quiz col-sm-4">
+                            <div class="htmlQuiz">
+                                <h3 class="m-0">HTML</h3>
+                                <p class="m-0">10 Questions covering the basics of HTML</p>
+                                <button type="button" class="startHereBtn">Start Here</button>
+                            </div>
+                        </div>
+                        <div class="quiz col-sm-4">
+                            <div class="cssQuiz">
+                                <h3 class="m-0">CSS</h3>
+                                <p class="m-0">10 Questions covering the basics of CSS</p>
+                                <button type="button" class="startHereBtn">Start Here</button>
+                            </div>
+                        </div>
+                        <div class="quiz col-sm-4">
+                            <div class="jsQuiz">
+                                <h3 class="m-0">JavaScript</h3>
+                                <p class="m-0">10 Questions covering the basics of JavaScript</p>
+                                <button type="button" class="startHereBtn">Start Here</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="instructionsModal">
+            <div class="instructHD">
+                <h3 class="m-0">Quiz Instruction</h3>
+            </div>
+            <div class="rules">
+                <ol class="m-0">
+                    <li>You will have only <strong>20 seconds</strong> per each question.</li>
+                    <li>You can't select any option once time <strong>goes off</strong>.</li>
+                    <li>You can't <strong>exit</strong> from the Quiz till your quiz wouldn't end.</li>
+                    <li>You'll get points on the basis of your <strong>correct answers</strong>.</li>
+                </ol>
+            </div>
+            <div class="instructBtns">
+                <button type="button" class="exitQuizBtn">Exit Quiz</button>
+                <button type="button" class="startQuizBtn">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- JavaScript File Link -->
+    <script src="app.js"></script>
+
+    <!-- Bootstrap JavaScript CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

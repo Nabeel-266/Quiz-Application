@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&family=Macondo&family=Poppins:wght@200;300;400;500;600;700;800&family=Sacramento&family=Tsukimi+Rounded:wght@300;400;500;600;700&family=Varela+Round&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --black: #000000;
+    --white: #ffffff;
+    --primaryColor: #00ccff;
+    --primaryColorDark: #0085b6;
+    --secondaryColor: #5cdeff;
+    --textColorDark: #111111;
+    --textColorMediumDark: #555555;
+    --textColorMediumLight: #dddddd;
+    --textColorLight: #ffffff;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: "Poppins", sans-serif !important;
+}
+
+.mainContainer{
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../Assets/newDashboardBg.jpg) center/cover no-repeat;
+    background-color: rgb(120, 120, 120);
+    background-blend-mode: multiply;
+    position: relative;
+}
+.mainContainer .blurOverlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(4px);
+    padding: 0px 60px !important;
+}
+.mainContainer .subContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+.subContainer .mainHeading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0px 0px 10px 0px;
+}
+.mainHeading h1{
+    font-size: 6rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: transparent;
+    font-family: 'Tsukimi Rounded', sans-serif;
+    -webkit-text-stroke: 2px var(--primaryColor);
+    background: url(../Assets/text-background.jpg);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    text-decoration: underline 0.5rem var(--textColorLight);
+    animation: animateBg 10s linear infinite;
+}
+@keyframes animateBg {
+    100%{
+        background-position: 0% 100%;
+    }
+}
+.mainHeading p{
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: var(--textColorLight);
+    font-family: 'Tsukimi Rounded', sans-serif;
+}
+
+.subContainer .quizSelection{
+    /* background-color: lightgray; */
+    margin-top: 30px !important;
+}
+.quizSelection .quizzesRow{
+    padding: 20px 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 6px;
+}
+.quizzesRow .quizHD{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--textColorLight);
+    padding: 0px 0px 20px 0px;
+}
+.quizHD h2{
+    color: var(--primaryColorDark);
+    -webkit-text-stroke: 1.5px var(--textColorLight);
+    font-size: 4.4rem;
+    font-weight: bold;
+    font-family: 'Tsukimi Rounded', sans-serif;
+}
+.quizzesRow .quiz{
+    padding: 20px 10px;
+    /* background-color: lightseagreen; */
+}
+.htmlQuiz, .cssQuiz, .jsQuiz{
+    padding: 30px 10px 40px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 2px solid var(--white);
+}
+.htmlQuiz h3, .cssQuiz h3, .jsQuiz h3{
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-family: 'Tsukimi Rounded', sans-serif;
+    color: var(--primaryColorDark);
+}
+.htmlQuiz p, .cssQuiz p, .jsQuiz p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--textColorMediumDark);
+    text-align: center;
+}
+.htmlQuiz button, .cssQuiz button, .jsQuiz button{
+    padding: 5px 20px;
+    font-size: 2rem;
+    border-radius: 100px;
+    border: 2px solid var(--primaryColorDark);
+    background-color: transparent;
+    color: var(--textColorMediumDark);
+    transform: scale(1);
+    box-shadow: 6px 6px 15px var(--textColorMediumDark);
+}
+.htmlQuiz button:hover, .cssQuiz button:hover, .jsQuiz button:hover{
+    transition: 0.3s;
+    border: 2px solid var(--textColorMediumDark);
+    color: var(--textColorLight);
+    background-color: var(--primaryColorDark);
+    transform: scale(1.05);
+}
+.htmlQuiz button:active, .cssQuiz button:active, .jsQuiz button:active{
+    transform: scale(1);
+}
+
+.mainContainer .instructionsModal{
+    position: absolute;
+    width: 40vw;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    /* display: none; */
+    transform: scale(0);
+    transition: all 0.2s linear;
+}
+.instructionsModal .instructHD{
+    padding: 10px 0px;
+    border-bottom: 2px solid var(--textColorMediumLight);
+}
+.instructHD h3{
+    font-size: 2.5rem;
+    font-family: 'Tsukimi Rounded', sans-serif;
+    font-weight: bold;
+    color: var(--textColorDark);
+}
+.instructionsModal .rules{
+    padding: 10px 0px;
+    border-bottom: 2px solid var(--textColorMediumLight);
+}
+.rules ol{
+    padding: 5px 0px;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.rules ol li{
+    font-size: 1.6rem;
+    color: var(--textColorDark);
+}
+.rules ol li strong{
+    color: var(--primaryColorDark);
+}
+.instructionsModal .instructBtns{
+    padding: 10px 0px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+.instructBtns button{
+    padding: 5px 20px;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.exitQuizBtn{
+    color: var(--primaryColorDark);
+    border: 2px solid var(--primaryColorDark);
+    background-color: transparent;
+}
+.exitQuizBtn:hover{
+    transition: 0.3s;
+    color: var(--textColorLight);
+    border: 2px solid var(--primaryColor);
+    background-color: var(--primaryColor);
+}
+.startQuizBtn{
+    color: var(--textColorLight);
+    border: 2px solid var(--primaryColorDark);
+    background-color: var(--primaryColorDark);
+}
+.startQuizBtn:hover{
+    transition: 0.3s;
+    border: 2px solid var(--primaryColor);
+    background-color: var(--primaryColor);
+}
+
+.hide{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* .subContainer .rules{
+    width: 100%;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightcoral;
+}
+.rules h2{
+    font-size: 2.8rem;
+    font-weight: 500;
+    padding: 0px 0px;
+    color: var(--secondaryColor);
+    border-bottom: 2px solid var(--textColorMediumLight);
+}
+.rules ol{
+    background-color: lightgreen;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+.rules ol li{
+    list-style-type: decimal;
+    list-style-position: inside;
+    font-size: 1.5rem;
+    color: var(--textColorLight);
+} */

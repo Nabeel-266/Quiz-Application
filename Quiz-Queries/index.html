@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Font-Awesome-Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- BoxIcons  -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <div class="mainContainer container-fluid g-0">
+        <!-- For Quiz Queries Area  -->
+        <div class="quizQueryArea row g-0">
+
+            <section class="headerArea col-12 p-0">
+                <h3 class="m-0">HTML Quiz</h3>
+                <div class="timing">
+                    <p class="m-0">Time Left</p>
+                    <span class="remainingTimer">20</span>
+                </div>
+                <div class="timebar"></div>
+            </section>
+
+            <section class="contentArea col-12 p-0">
+                <div class="query">
+                    <span class="question"></span>
+                </div>
+                <div class="optionList">
+                    <span class="options">
+                        <input type="radio" name="option" id="optionOne" class="queryOpt">
+                        <label for="optionOne" class="queryOptOne"></label>
+                    </span>
+                    <span class="options">
+                        <input type="radio" name="option" id="optionTwo" class="queryOpt">
+                        <label for="optionTwo" class="queryOptTwo"></label>
+                    </span>
+                    <span class="options">
+                        <input type="radio" name="option" id="optionThree" class="queryOpt">
+                        <label for="optionThree" class="queryOptThree"></label>
+                    </span>
+                    <span class="options">
+                        <input type="radio" name="option" id="optionFour" class="queryOpt">
+                        <label for="optionFour" class="queryOptFour"></label>
+                    </span>
+                </div>
+                <div class="footer">
+                    <p class="m-0"><span class="quesStatus"></span> of <span class="totalQue"></span> Questions</p>
+                    <button type="button" class="nextQueBtn" onclick="nextQue()">Next Que</button>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- For Quiz Result Area  -->
+        <div class="quizResultArea hide row g-0">
+
+            <section class="resultHD col-12">
+                <h2 class="m-0">Your Result</h2>
+            </section>
+
+            <section class="resultContent col-12">
+
+                <div class="crtAns row g-0">
+                    <span class="property col-6">Correct Answer</span>
+                    <span class="value correctAns col-6"></span>
+                </div>
+                <div class="wrgAns row g-0">
+                    <span class="property col-6">Wrong Answer</span>
+                    <span class="value wrongAns col-6"></span>
+                </div>
+                <div class="skpQue row g-0">
+                    <span class="property col-6">Skip Questions</span>
+                    <span class="value skipQue col-6"></span>
+                </div>
+                <div class="status row g-0">
+                    <span class="property col-6">Quiz Status</span>
+                    <span class="value quizStatus col-6"></span>
+                </div>
+
+            </section>
+
+            <section class="suggestionBtns col-12">
+                <button type="button" class="ansCheckBtn">Check Answers</button>
+                <button type="button" class="replayBtn">Replay</button>
+                <button type="button" class="quizBackBtn">Back To Quizzes</button>
+            </section>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- JavaScript File Link -->
+    <script src="app.js"></script>
+
+    <!-- Bootstrap JavaScript CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
