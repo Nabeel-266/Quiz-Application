@@ -38,8 +38,8 @@ const htmlQuestions = [htmlQuery1, htmlQuery2, htmlQuery3, htmlQuery4, htmlQuery
 // --------------------> For Timer <----------------------
 const remainingTimer = document.querySelector('.remainingTimer');
 const timebar = document.querySelector('.timebar');
+let skipAnsCounter = 0;
 let counter;
-let skippedAns = 0;
 
 const startTiming = (time) => {
     counter = setInterval(timer, 1000);
@@ -49,9 +49,9 @@ const startTiming = (time) => {
         time--;
 
         if(time < 0){
-            skippedAns++;
+            skipAnsCounter++;
             nextQue();
-            console.log(skippedAns, "---> Skipped Ans");
+            // console.log(skipAnsCounter, "---> Skipped Ans");
         }
         if(time < 9){
             remainingTimer.innerText = "0" + remainingTimer.innerText;
@@ -61,7 +61,7 @@ const startTiming = (time) => {
         clearInterval(counter);
         remainingTimer.innerText = "0"
     }
-    console.log(counter, "---> Counter VAl")
+    // console.log(counter, "---> Counter VAl");
 };
 
 
@@ -108,9 +108,9 @@ function nextQue() {
 
     
     if(index > htmlQuestions.length - 1){
-        correctAns.innerHTML = `${correctAnsCounter}`;
-        wrongAns.innerHTML = `${wrongAnsCounter}`;
-        skipQue.innerHTML = `${skippedAns}`;
+        correctAns.innerHTML = correctAnsCounter < 10 ? `0${correctAnsCounter}` : `${correctAnsCounter}`;
+        wrongAns.innerHTML = wrongAnsCounter < 10 ? `0${wrongAnsCounter}` : `${wrongAnsCounter}`;
+        skipQue.innerHTML = skipAnsCounter < 10 ? `0${skipAnsCounter}` : `${skipAnsCounter}`;
 
         if(correctAnsCounter <= 2){
             quizStatus.innerHTML = "Poor";
@@ -127,7 +127,7 @@ function nextQue() {
         else{
             quizStatus.innerHTML = "Excellent";
         }
-        
+
         clearInterval(counter);
         quizQueryArea.classList.add("hide");
         quizResultArea.classList.remove("hide");
